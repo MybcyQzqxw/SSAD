@@ -44,27 +44,37 @@ SSAD（Self-supervised Auxiliary Detection）是一个基于重建的自监督�
 
 ## ⚙️ 安装指南
 
-### 步骤1：安装PyTorch
-
-根据您的CUDA版本从PyTorch官网选择合适的版本，例如：
+### 步骤1：环境构建
 
 ```bash
-pip install torch==1.12.1+cu113 torchvision==0.13.1+cu113 torchaudio==0.12.1 --extra-index-url https://download.pytorch.org/whl/cu113
+conda create -n ssad python=3.8 -y
+conda activate ssad
+```
+### 步骤2：安装PyTorch
+
+```bash
+# 例如：
+# CUDA 11.8
+conda install pytorch==2.5.1 torchvision==0.20.1 torchaudio==2.5.1  pytorch-cuda=11.8 -c pytorch -c nvidia
+# CUDA 12.1
+conda install pytorch==2.5.1 torchvision==0.20.1 torchaudio==2.5.1 pytorch-cuda=12.1 -c pytorch -c nvidia
+# CUDA 12.4
+conda install pytorch==2.5.1 torchvision==0.20.1 torchaudio==2.5.1 pytorch-cuda=12.4 -c pytorch -c nvidia
 ```
 
-### 步骤2：安装依赖包
+### 步骤3：安装其他依赖
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 步骤3：安装CLIP
+### 步骤4：安装CLIP
 
 ```bash
 cd models/CLIP && pip install .
 ```
 
-### 步骤4：安装MultiScaleDeformableAttention
+### 步骤5：安装MultiScaleDeformableAttention
 
 请参考 [DINO](https://github.com/IDEA-Research/DINO) 的指导安装MultiScaleDeformableAttention。
 
